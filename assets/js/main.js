@@ -1,4 +1,4 @@
-/* global AOS, Typed, Waypoint, PureCounter, GLightbox, imagesLoaded, Isotope, Swiper, initSwiperWithCustomPagination, window, document, location, URLSearchParams */
+/* global AOS, Typed, Waypoint, PureCounter, GLightbox, imagesLoaded, Isotope, Swiper, initSwiperWithCustomPagination */
 
 ;(() => {
   'use strict'
