@@ -1,0 +1,34 @@
+name: CI (static site)
+
+on:
+  workflow_dispatch:         # permet de lancer à la main
+  push:                      # tourne sur tous les push
+    branches:
+      - '**'
+  pull_request:              # tourne sur toutes les PR
+
+jobs:
+  checks:
+    name: Basic checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Lint HTML/CSS/JS (simple et sans package.json)
+      - name: Super-Linter
+        uses: super-linter/super-linter@v7
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_HTML: true
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_STANDARD: true
+
+      # Vérifie les liens (optionnel, mais utile)
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --exclude-mail --accept 200,206,429 .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
