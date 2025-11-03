@@ -1,34 +1,62 @@
 name: CI (static site)
 
 on:
-  workflow_dispatch:         # permet de lancer à la main
-  push:                      # tourne sur tous les push
-    branches:
-      - '**'
-  pull_request:              # tourne sur toutes les PR
+  workflow_dispatch:
+  push:
+    branches: [ "**" ]
+    paths:
+      - "**/*.html"
+      - "**/*.css"
+      - "**/*.js"
+      - ".github/workflows/**"
+  pull_request:
+    branches: [ "**" ]
+    paths:
+      - "**/*.html"
+      - "**/*.css"
+      - "**/*.js"
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+  checks: write
+  statuses: write
+  pull-requests: write
 
 jobs:
   checks:
     name: Basic checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # Lint HTML/CSS/JS (simple et sans package.json)
       - name: Super-Linter
         uses: super-linter/super-linter@v7
         env:
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_HTML: true
           VALIDATE_CSS: true
           VALIDATE_JAVASCRIPT_STANDARD: true
+          FILTER_REGEX_EXCLUDE: "assets/vendor/.*|.*\\.min\\.(js|css)$"
 
-      # Vérifie les liens (optionnel, mais utile)
-      - name: Link Checker
+      - name: Link Checker (internal links only)
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --exclude-mail --accept 200,206,429 .
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,206,429
+            --exclude 'https://fonts\.googleapis\.com'
+            --exclude 'https://fonts\.gstatic\.com'
+            --exclude 'https://bootstrapmade\.com'
+            --exclude 'https://twitter\.com'
+            --exclude 'https://(www\.)?facebook\.com'
+            --exclude 'https://www\.instagram\.com'
+            --exclude 'https://(www\.)?linkedin\.com'
+            .
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
