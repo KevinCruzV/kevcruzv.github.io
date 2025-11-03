@@ -1,11 +1,19 @@
+/* global window */
+
 window.PORTFOLIO = {
   connect: {
-    title: "InPart — Connect",
-    images: ["assets/img/portfolio/inpart-9.png", "assets/img/portfolio/inpart-7.png", "assets/img/portfolio/inpart-10.png", "assets/img/portfolio/inpart-11.png", "assets/img/portfolio/inpart-12.png"],
-    category: "Web App / B2B",
-    client: "InPart",
-    date: "2025-05-01",
-    url: "https://inpart.io/",
+    title: 'InPart — Connect',
+    images: [
+      'assets/img/portfolio/inpart-9.png',
+      'assets/img/portfolio/inpart-7.png',
+      'assets/img/portfolio/inpart-10.png',
+      'assets/img/portfolio/inpart-11.png',
+      'assets/img/portfolio/inpart-12.png'
+    ],
+    category: 'Web App / B2B',
+    client: 'InPart',
+    date: '2025-05-01',
+    url: 'https://inpart.io/',
     description: `
   <p>
     <strong>InPart — Connect</strong> is a large-scale <strong>B2B web platform</strong> designed to connect universities,
@@ -49,17 +57,16 @@ window.PORTFOLIO = {
     <em>Connect</em> represents a comprehensive full-stack product that combines elegant UI design,
     robust back-end logic, and DevOps automation — built to empower scientific collaboration at scale.
   </p>
-`,
-
+`
   },
   messenger: {
-    title: "📨 InPart — Messenger",
-    images: ["assets/img/portfolio/inpart-8.jpeg"],
-    category: "Realtime / Messaging",
-    client: "InPart",
-    date: "2025-03-15",
-    url: "https://inpart.io/",
-   description: `
+    title: '📨 InPart — Messenger',
+    images: ['assets/img/portfolio/inpart-8.jpeg'],
+    category: 'Realtime / Messaging',
+    client: 'InPart',
+    date: '2025-03-15',
+    url: 'https://inpart.io/',
+    description: `
     <p>
         Internal messaging module for the <strong>InPart</strong> platform enabling real-time communication between
         teams, departments, and external partners. Designed to streamline collaboration within the biopharma ecosystem
@@ -83,15 +90,18 @@ window.PORTFOLIO = {
     <p>
         This project demonstrates full-stack expertise combining modern front-end design with robust back-end engineering.
     </p>
-    `,
+    `
   },
   graines: {
-    title: "Les Graines du Cabo Verde",
-    images: ["assets/img/portfolio/lesgraines-du-caboverde.png", "assets/img/portfolio/lesgraines-du-caboverde-2.png"],
-    category: "Association",
-    client: "Les Graines du Cabo Verde",
-    date: "2024-11-01",
-    url: "#",
+    title: 'Les Graines du Cabo Verde',
+    images: [
+      'assets/img/portfolio/lesgraines-du-caboverde.png',
+      'assets/img/portfolio/lesgraines-du-caboverde-2.png'
+    ],
+    category: 'Association',
+    client: 'Les Graines du Cabo Verde',
+    date: '2024-11-01',
+    url: '#',
     description: `
   <p>
     <strong>Les Graines du Cabo Verde</strong> is a bilingual <strong>nonprofit showcase website</strong> created to support
@@ -125,16 +135,19 @@ window.PORTFOLIO = {
     This project showcases the ability to design and develop a <strong>purpose-driven, user-friendly website</strong>
     that combines visual storytelling, performance, and simplicity — all in service of a meaningful cause.
   </p>
-`,
-
+`
   },
   arcanan: {
-    title: "Arcanan Conseils",
-    images: ["assets/img/portfolio/arcananconseil.png", "assets/img/portfolio/arcananconseil-2.png", "assets/img/portfolio/arcananconseil-3.png"],
-    category: "Landing / Assurance",
-    client: "Arcanan Conseils",
-    date: "2024-06-10",
-    url: "https://arcananconseils.fr",
+    title: 'Arcanan Conseils',
+    images: [
+      'assets/img/portfolio/arcananconseil.png',
+      'assets/img/portfolio/arcananconseil-2.png',
+      'assets/img/portfolio/arcananconseil-3.png'
+    ],
+    category: 'Landing / Assurance',
+    client: 'Arcanan Conseils',
+    date: '2024-06-10',
+    url: 'https://arcananconseils.fr',
     description: `
   <p>
     <strong>Arcanan Conseils</strong> is a complete <strong>insurance brokerage platform</strong> combining
@@ -169,16 +182,20 @@ window.PORTFOLIO = {
     management with the interactivity of <strong>React</strong> for the front-end — to deliver a powerful, maintainable,
     and business-focused digital presence for a modern insurance broker.
   </p>
-`,
-
+`
   },
-    connectDash: {
-    title: "InPart — Dashboard",
-    images: ["assets/img/portfolio/inpart-3.png", "assets/img/portfolio/inpart-4.png", "assets/img/portfolio/inpart-5.png", "assets/img/portfolio/inpart-6.png"],
-    category: "Web App / B2B",
-    client: "InPart",
-    date: "2025-05-01",
-    url: "https://inpart.io/",
+  connectDash: {
+    title: 'InPart — Dashboard',
+    images: [
+      'assets/img/portfolio/inpart-3.png',
+      'assets/img/portfolio/inpart-4.png',
+      'assets/img/portfolio/inpart-5.png',
+      'assets/img/portfolio/inpart-6.png'
+    ],
+    category: 'Web App / B2B',
+    client: 'InPart',
+    date: '2025-05-01',
+    url: 'https://inpart.io/',
     description: `
   <p>
     <strong>InPart — Dashboard</strong> is the administrative and analytical control center of the
@@ -235,7 +252,6 @@ window.PORTFOLIO = {
     robust API design, and DevOps best practices — to deliver a comprehensive, data-driven
     <strong>administration platform</strong> that empowers both academic and corporate collaboration.
   </p>
-`,
-
-  },
-};
+`
+  }
+}
